@@ -19,10 +19,16 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx",
-    "typeRoots": ["./node_modules/@suka_types", "./src/types/xyi_tam"]
+    "jsx": "preserve",
+    "typeRoots": [
+      "@types",
+    ],
+    "incremental": true
   },
   "include": [
     "src"
+  ],
+  "exclude": [
+    "node_modules"
   ]
 }
