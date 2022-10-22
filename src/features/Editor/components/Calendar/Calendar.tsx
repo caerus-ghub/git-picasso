@@ -1,17 +1,12 @@
-import React, { useMemo, ReactNode } from 'react';
+import React, { useMemo } from 'react';
 
+import { ICalendar } from './types';
 import Day from './components/Day';
 
-const Calendar = () => {
-  const days = useMemo(() => {
-    let output: ReactNode[] = [];
-
-    for (let i = 0; i < 365; i++) {
-      output.push(<Day key={i}/>);
-    }
-
-    return output;
-  }, [])
+const Calendar: ICalendar = ({ firstDay, allDays }) => {
+  const days = useMemo(() =>
+    allDays.map((day, i) => <Day date={day} index={i} key={day.valueOf()} />)
+  , [firstDay]);
 
   return (
     <>

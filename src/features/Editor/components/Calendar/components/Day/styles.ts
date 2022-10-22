@@ -1,5 +1,5 @@
 import styled from 'styled-components';
 
 export const Rect = styled('rect')`
-  background-color: black;
+  fill: #afb8c1;
 `;

@@ -1,15 +1,15 @@
 import React from 'react';
 
-import useEditor, { selectFirstWeek, selectInitialDay } from './hooks/useEditor';
+import useEditor, { selectAllDays, selectFirstDay } from './hooks/useEditor';
 import Calendar from './components/Calendar';
 
 const Editor = () => {
-  const firstWeek = useEditor(selectFirstWeek);
-  const initialDay = useEditor(selectInitialDay);
+  const firstDay = useEditor(selectFirstDay)
+  const allDays = useEditor(selectAllDays);
 
   return (
     <>
-      <Calendar></Calendar>
+      <Calendar firstDay={firstDay} allDays={allDays}></Calendar>
     </>
   );
 }
